@@ -1,0 +1,27 @@
+# Written in class on Tuesday, September 11
+
+# We took the code for the Calypso rhythm (see below), which was
+# written in sample/sleep format, and compressed it into a couple
+# of rings. To simplify the rings, we also defined two variables:
+
+kick = :drum_heavy_kick
+tom  = :drum_tom_hi_soft
+
+use_bpm 200
+
+def beat
+  
+  tick
+  
+  drums = (ring kick, tom, kick, tom, kick, tom, tom, kick, tom)
+  drums_sleep = (ring 1.5, 0.5, 1, 1, 0.5, 1, 0.5, 1, 1)
+  
+  sample drums.look
+  sleep drums_sleep.look
+end
+
+
+beat
+
+
+###this isnt working on my computer I will try again and figure it out
