@@ -1,0 +1,31 @@
+##notes = [:r, :e4, :d4, :e4, :d4, :r,
+##         :r, :d4, :d4, :e4, :fs4, :e4, :d4]  # :r is rest.
+
+##durations = [1, 0.5, 0.5, 0.5, 0.5, 1,       # Adds up to four beats!
+##             1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+
+##play_pattern_timed notes, durations
+##end
+
+
+use_bpm 138
+use_synth :piano
+notes1 = [:G4, :D5, :Bb4, :A4,##
+          :G4, :Bb4, :A4, :G4, :Fs4, :A4, :D4]
+##b for flats s for sharps
+durations = [1, 1, 1.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1]
+sleep 0
+
+play_pattern_timed notes1, durations
+use_bpm 138
+use_synth :piano
+notes1 = [:G4, :D5, :Bb4, :A4,##
+          :G4, :Bb4, :A4, :G4, :Fs4, :A4, :D4]
+##b for flats s for sharps
+durations = [1, 1, 1.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1]
+
+
+play_pattern_timed notes1, durations
+
+
+#######Trying to get it so i can play two notes together, while organizing my work horizonatlly.
