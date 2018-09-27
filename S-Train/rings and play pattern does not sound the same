@@ -1,0 +1,27 @@
+
+
+11.times  do
+  use_bpm 96
+  use_synth :blade
+  tick
+  notes = (ring :C4, ##measure ends 1
+           :C4, :C4, :C4, :E4, :D4, :D4, :C4, ##measure ends 2
+           :C4, :C4, :r) ##one note left in measure
+  durations = (ring 0.25, ##measure ends
+               0.75, 0.25, 0.75, 0.25, 1, 0.75, 0.25, ##measure ends\
+               0.75, 0.25, 2.75,) ##one note left in measure
+  play notes.look
+  sleep durations.look
+end
+####################### I CANNOT FIGURE OUT WHY THESE DONT SOUND THE SAME
+1.times do
+  use_bpm 96
+  use_synth:blade
+  notes1 = [:C4, ##measure ends 1
+            :C4, :C4, :C4, :E4, :D4, :D4, :C4, ##measure ends 2
+            :C4, :C4, :r,] ##one note left in measure
+  durations = [0.25, ##measure ends
+               0.75, 0.25, 0.75, 0.25, 1, 0.75, 0.25, ##measure ends\
+               0.75, 0.25, 2.75,] ##one note left in measure
+  play_pattern_timed notes1, durations
+end
