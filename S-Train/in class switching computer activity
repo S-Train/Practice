@@ -1,0 +1,58 @@
+##final countfown ### only the first measure
+##the functions need to be threaded together for all the notes to play at once
+##the bpm is 120
+
+use_bpm 120
+
+define :notes1p do
+  notes1 = [:r, :r, :Cs5, :B4, :Cs5, :F4]
+  durations1 =[1, 0.5, 0.25, 0.25, 1, 1]
+  play_pattern_timed notes1, durations1
+end
+
+define :notes2p do
+  notes2 =[:Fs3]
+  durations2 =[4]
+  play_pattern_timed notes2, durations2
+end
+
+define :notes3p do
+  notes3 =[:F2]
+  durations3 = [4]
+  play_pattern_timed notes3, durations3
+end
+
+#added some background bass using conditionals
+in_thread do
+  live_loop :bass do
+    beat = (ring 1, 0)
+    tick
+    sample :bass_woodsy_c, amp: 0.25, sustain: 0.5 if beat.look == 0
+    sample :bass_voxy_hit_c, amp: 0.25 if beat.look == 1
+    sleep 1
+  end
+end
+
+in_thread do
+  loop do
+    notes1p
+    sleep 1
+  end
+end
+
+in_thread do
+  loop do
+    notes2p
+    sleep 1
+  end
+end
+
+in_thread do
+  loop do
+    notes3p
+    sleep 1
+  end
+end
+
+
+
