@@ -1,0 +1,34 @@
+live_loop :calypso do
+  kick = :drum_heavy_kick
+  tom =  :drum_tom_hi_soft
+  
+  use_bpm 200
+  
+  tick
+  
+  drums = (ring kick, tom, kick, tom, kick, tom, tom, kick, tom)
+  drums_sleep = (ring 1.5, 0.5, 1, 1, 0.5, 1, 0.5, 1, 1)
+  
+  sample drums.look
+  sleep drums_sleep.look
+  
+  'sample :drum_heavy_kick
+  sleep 1.5
+  sample :drum_tom_hi_soft
+  sleep 0.5
+  sample :drum_heavy_kick
+  sleep 1
+  sample :drum_tom_hi_soft
+  sleep 1
+  sample :drum_heavy_kick
+  sleep 0.5
+  sample :drum_tom_hi_soft
+  sleep 1
+  sample :drum_tom_hi_soft
+  sleep 0.5
+  sample :drum_heavy_kick
+  sleep 1
+  sample :drum_tom_hi_soft
+  sleep 1'
+  
+end
